@@ -1,0 +1,59 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.py.class
+
+# --- Virtual Environment ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Model / Data / Logs ---
+models/
+checkpoints/
+*.pt
+*.bin
+*.pkl
+*.ckpt
+*.zip
+data/
+datasets/
+logs/
+*.log
+*.csv
+*.tsv
+*.jsonl
+
+# --- Docker / Build ---
+*.pid
+*.tar
+*.img
+build/
+dist/
+*.egg-info/
+
+# --- Environment / Keys ---
+.env
+.env.local
+.env.*
+*.pem
+*.key
+*.crt
+
+# --- Misc ---
+.ipynb_checkpoints
+*.tmp
+*.bak
+*.swp
+*.swo
