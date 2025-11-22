@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from app.schemas import RecommendRequest, RecommendResponse
 from app.services.recommender import recommend as run_recommend
+from app.schemas import EmbeddingRequest, EmbeddingResponse
+from app.services.recommender import embed_text
 from app import config
 from sentence_transformers import SentenceTransformer
 
@@ -30,3 +32,11 @@ def recommend(req: RecommendRequest):
         raise HTTPException(status_code=400, detail="items list is empty")
 
     return run_recommend(query=req.query, items=req.items, top_k=req.top_k)
+
+@router.post("/embedding", response_model=EmbeddingResponse)
+def embedding(req: EmbeddingRequest):
+    if not req.text or req.text.strip() == "":
+        raise HTTPException(status_code=400, detail="text is empty")
+
+    emb = embed_text(req.text)
+    return EmbeddingResponse(embedding=emb)

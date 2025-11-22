@@ -1,5 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
+from pydantic import BaseModel
+from typing import List
 
 class ChallengeItemIn(BaseModel):
     challengeId: int
@@ -31,3 +33,9 @@ class HealthResponse(BaseModel):
     ok: bool
     modelLoaded: bool
     modelVersion: str
+
+class EmbeddingRequest(BaseModel):
+    text: str
+
+class EmbeddingResponse(BaseModel):
+    embedding: List[float]
