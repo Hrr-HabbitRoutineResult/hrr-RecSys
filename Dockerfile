@@ -11,8 +11,8 @@ COPY models/ /models/
 
 COPY app /app/app
 
-ENV MODEL_PATH=/models/e5_stage_pairs_triplets
-ENV MODEL_VERSION=v1.0.0
+ENV MODEL_PATH=/models/e5_finetuned
+ENV MODEL_VERSION=v2.0.0
 ENV DEVICE=cpu
 
 EXPOSE 8000
