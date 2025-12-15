@@ -1,20 +1,18 @@
 from fastapi import APIRouter, HTTPException
-from app.schemas import RecommendRequest, RecommendResponse
-from app.services.recommender import recommend as run_recommend
-from app.schemas import EmbeddingRequest, EmbeddingResponse
-from app.services.recommender import embed_text
+from app.schemas import RecommendRequest, RecommendResponse, EmbeddingRequest, EmbeddingResponse
+from app.services.recommender import run_recommend
+from app.services.embedder import embed_text
 from app import config
 from sentence_transformers import SentenceTransformer
 
 router = APIRouter()
 
-@router.get("/health")
+@router.get("/")
 def health():
     # 모델 로드 상태 확인
     ok = True
     loaded = True
     try:
-        # 간단히 인스턴스 생성 확인만
         SentenceTransformer
     except Exception:
         loaded = False

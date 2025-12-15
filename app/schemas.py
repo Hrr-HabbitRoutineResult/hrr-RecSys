@@ -10,11 +10,10 @@ class ChallengeItemIn(BaseModel):
     category: Optional[str] = None           
     cert_time_slots: Optional[str] = None    
     goal_text: Optional[str] = None          
-    embedding: List[float]                   # DB에서 꺼낸 normalized 벡터
+    embedding: List[float]
 
 class RecommendRequest(BaseModel):
-    # 백엔드는 여기로 "query: 20대 직장인, ..." 형태로 넘김
-    query: str = Field(..., description='Must start with "query:" (E5 스타일 권장)')
+    query: str = Field(..., description='Must start with "query:"')
     items: List[ChallengeItemIn]
     top_k: int = 5
 
