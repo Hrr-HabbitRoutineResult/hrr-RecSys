@@ -1,7 +1,7 @@
 import os
 
-MODEL_PATH = os.getenv("MODEL_PATH", "./models/e5_stage_pairs_triplets")
-MODEL_VERSION = os.getenv("MODEL_VERSION", "v1.0.0")
+MODEL_PATH = os.getenv("MODEL_PATH", "./models/e5_finetuned")
+MODEL_VERSION = os.getenv("MODEL_VERSION", "v2.0.0")
 DEVICE = os.getenv("DEVICE", "cpu") 
 
 W_CAT = float(os.getenv("W_CAT", "0.15"))
