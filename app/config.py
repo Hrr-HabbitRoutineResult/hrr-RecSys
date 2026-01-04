@@ -1,6 +1,6 @@
 import os
 
-MODEL_PATH = os.getenv("MODEL_PATH", "./models/e5_finetuned")
+MODEL_PATH = os.getenv("MODEL_PATH", "./app/models/e5_finetuned")
 MODEL_VERSION = os.getenv("MODEL_VERSION", "v2.0.0")
 DEVICE = os.getenv("DEVICE", "cpu") 
 
